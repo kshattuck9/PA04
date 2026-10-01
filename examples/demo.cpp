@@ -17,9 +17,23 @@ int main()
         std::cout << x[i] << ' ';
     std::cout << '\n';
 
-    lu_solve(3, a, p, c, x);  // Reuse the same factors.
+    lu_solve(3, a, p, c, x);
     std::cout << "Second solution (expected 1 1 1): ";
     for (int i = 0; i < 3; ++i)
         std::cout << x[i] << ' ';
+    std::cout << '\n';
+
+    //adding another test case
+    double d[] = {2, 1, 1, 4, 3, 3, 8, 7, 9};
+    double e[] = {4, 10, 24};
+    double y[3] = {};
+    int q[3];
+
+    lu_factor(3, d, q);
+    lu_solve(3, d, q, e, y);
+
+    std::cout << "Third solution (expected 1 1 1): ";
+    for (int i = 0; i < 3; ++i)
+        std::cout << y[i] << ' ';
     std::cout << '\n';
 }
