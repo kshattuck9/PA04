@@ -59,7 +59,6 @@ void forward_substitution(int n, const double* lu, const double* b, double* x)
         x[i] = b[i];
         for (int j = 0; j < i; ++j)
             x[i] -= lu[i*n+j] * x[j];
-        x[i] /= lu[i*n+i];
     }
     // TODO: traverse the rows in increasing order; L has unit diagonal.
 }
