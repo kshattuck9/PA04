@@ -87,9 +87,9 @@ void lu_solve(int n, const double* lu, const int* p, const double* b, double* x)
     for (int i = n - 1; i >= 0; --i)
     {
         for (int j = i + 1; j < n; ++j)
-            y[i] -= lu[i * n + j] * x[j];
+            y[i] -= lu[i*n+j] * x[j];
 
-        x[i] = y[i] / lu[i * n + i];
+        x[i] = y[i] / lu[i*n+i];
     }
     delete[] y;
     // TODO: permute the right-hand side, then use the two triangular solves.

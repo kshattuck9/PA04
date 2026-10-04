@@ -23,7 +23,7 @@ int main()
         std::cout << x[i] << ' ';
     std::cout << '\n';
 
-    //adding another test case
+    //adding another case for practice 
     double d[] = {2, 1, 1, 4, 3, 3, 8, 7, 9};
     double e[] = {4, 10, 24};
     double y[3] = {};
@@ -36,4 +36,24 @@ int main()
     for (int i = 0; i < 3; ++i)
         std::cout << y[i] << ' ';
     std::cout << '\n';
+
+    // Case 4 testing a 4x4 matrix
+double f[] = {
+    1, 2, 0, 1,
+    2, 1, 1, 0,
+    0, 1, 2, 1,
+    1, 0, 1, 2
+};
+
+double g[] = {9, 7, 12, 12};
+double z[4] = {};
+int r[4];
+
+lu_factor(4, f, r);
+lu_solve(4, f, r, g, z);
+
+std::cout << "Fourth solution (expected 1 2 3 4): ";
+for (int i = 0; i < 4; ++i)
+    std::cout << z[i] << ' ';
+std::cout << '\n';
 }
